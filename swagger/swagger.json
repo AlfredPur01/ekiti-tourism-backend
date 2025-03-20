@@ -1,0 +1,38 @@
+{
+    "openapi": "3.0.0",
+    "info": { "title": "Ekiti Tourism API", "version": "1.0.0" },
+    "paths": {
+      "/api/auth/signup": {
+        "post": {
+          "summary": "Register a new user",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": { "type": "string" },
+                    "email": { "type": "string" },
+                    "password": { "type": "string" },
+                    "role": { "type": "string", "enum": ["tourist", "business_owner"] }
+                  }
+                }
+              }
+            }
+          },
+          "responses": { "201": { "description": "User created" } }
+        }
+      },
+      "/api/accommodations": {
+        "get": {
+          "summary": "Get accommodations",
+          "parameters": [
+            { "name": "type", "in": "query", "schema": { "type": "string" } },
+            { "name": "minPrice", "in": "query", "schema": { "type": "number" } }
+          ],
+          "responses": { "200": { "description": "List of accommodations" } }
+        }
+      }
+    }
+  }
