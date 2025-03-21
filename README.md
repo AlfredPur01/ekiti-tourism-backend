@@ -58,9 +58,9 @@ docker run -d -p 27017:27017 --name mongo mongo:latest
 
 Configuration
 Environment Variables:
+
 Create a .env file in the root directory by copying the .env.example file.
 Update it with the following values:
-
 ```bash
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/ekiti-tourism
